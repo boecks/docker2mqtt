@@ -13,7 +13,7 @@ You can also use docker compose:
 services:
   docker2mqtt:
     container_name: docker2mqtt
-    image: docker2mqtt
+    image: ghcr.io/boecks/docker2mqtt-amd64:latest
     environment:
       - DESTROYED_CONTAINER_TTL=86400
       - DOCKER2MQTT_HOSTNAME=my_docker_host
