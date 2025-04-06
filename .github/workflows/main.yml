@@ -47,8 +47,8 @@ jobs:
       - name: Build and Push the Docker image
         uses: docker/build-push-action@v6
         with:
-          context: smtp2mqtt  
-          file: smtp2mqtt/Dockerfile  
+          context: docker2mqtt  
+          file: docker2mqtt/Dockerfile  
           push: true
           tags: |
             ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}-${{ 
