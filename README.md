@@ -10,28 +10,25 @@ Use docker to launch this. Please note that you must give it access to your dock
 
 You can also use docker compose:
 ```yaml
-version: '3'
 services:
   docker2mqtt:
     container_name: docker2mqtt
-    image: skullydazed/docker2mqtt
+    image: docker2mqtt
     environment:
-    - DESTROYED_CONTAINER_TTL=86400
-    - DOCKER2MQTT_HOSTNAME=my_docker_host
-    - HOMEASSISTANT_PREFIX=homeassistant
-    - MQTT_CLIENT_ID=docker2mqtt
-    - MQTT_HOST=mosquitto
-    - MQTT_PORT=1883
-    - MQTT_USER=username
-    - MQTT_PASSWD=password
-    - MQTT_TIMEOUT=30
-    - MQTT_TOPIC_PREFIX=docker
-    - MQTT_QOS=1
+      - DESTROYED_CONTAINER_TTL=86400
+      - DOCKER2MQTT_HOSTNAME=my_docker_host
+      - HOMEASSISTANT_PREFIX=homeassistant
+      - MQTT_CLIENT_ID=docker2mqtt
+      - MQTT_HOST=mosquitto
+      - MQTT_PORT=1883
+      - MQTT_USER=username
+      - MQTT_PASSWD=password
+      - MQTT_TIMEOUT=30
+      - MQTT_TOPIC_PREFIX=docker
+      - MQTT_QOS=1
     restart: always
     volumes:
-    - type: volume
-      source: /var/run/docker.sock
-      target: /var/run/docker.sock
+      - /var/run/docker.sock:/var/run/docker.sock
 ```
 
 # Configuration
